@@ -1,6 +1,6 @@
 package com.spring.testproject.controller;
 
-import com.spring.testproject.dto.MemberDTO;
+import com.spring.testproject.data.dto.MemberDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
