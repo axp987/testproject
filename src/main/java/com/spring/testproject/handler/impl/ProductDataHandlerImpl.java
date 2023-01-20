@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @Transactional
@@ -29,4 +30,18 @@ public class ProductDataHandlerImpl implements ProductDataHandler {
     public ProductEntity getProductEntity(String productId) {
         return productDAO.getProduct(productId);
     }
+
+    @Override
+    public List<ProductEntity> getAllProductEntity() {
+        return productDAO.getAllProduct();
+    }
+
+    @Override
+    public ProductEntity saveDataHandlerProduct(String productId, String productName, int productPrice, int ProductStock) {
+        ProductEntity productEntity = new ProductEntity(productId, productName, productPrice, ProductStock);
+
+        return productDAO.saveDaoProduct(productEntity);
+    }
+
+
 }

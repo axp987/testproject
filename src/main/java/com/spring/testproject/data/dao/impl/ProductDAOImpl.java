@@ -6,6 +6,8 @@ import com.spring.testproject.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 // 데이터베이스 영역
 @Service
 public class ProductDAOImpl implements ProductDao {
@@ -29,4 +31,17 @@ public class ProductDAOImpl implements ProductDao {
         ProductEntity productEntity = productRepository.getById(productId);
         return productEntity;
     }
+
+    @Override
+    public List<ProductEntity> getAllProduct() {
+        List<ProductEntity> productEntity = productRepository.findAll();
+        return productEntity;
+    }
+
+    @Override
+    public ProductEntity saveDaoProduct(ProductEntity productEntity) {
+        return productRepository.save(productEntity);
+    }
+
+
 }
