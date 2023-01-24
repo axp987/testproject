@@ -11,6 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 @Entity
+@ToString
 @Table(name = "product")
 public class ProductEntity extends BaseEntity { // BaseEntity 에 있는 컬럼을 상속 받아서 사용할 수 있다.
     @Id
